@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container mx-auto">
       <section class="flex selection-container">
         <div style="width: 400px" class="filter-container">FILTER</div>
         <div class="goods-container">
@@ -13,7 +13,7 @@
             <div class="result-description">
               Short Sleeve Baby One-Pieces37,603 Results
             </div>
-            <div class="goods-body flex flex-wrap">
+            <div class="goods-body grid grid-cols-4">
               <div
                 class="item"
                 v-for="(item, index) in container['goods']"
@@ -106,8 +106,6 @@
   }
   .item {
     box-sizing: border-box;
-    flex: 0 0 25%;
-    max-width: 25%;
     padding-right: 5px !important;
     padding-left: 5px !important;
     margin-bottom: 25px;
