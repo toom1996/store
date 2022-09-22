@@ -5,7 +5,6 @@ module.exports = {
   darkMode: true,
   theme: {
     flex: {
-      '25': '0 0 25%'
     },
     extend: {},
   },

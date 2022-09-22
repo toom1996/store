@@ -13,7 +13,7 @@ const routes:RouteRecordRaw[] = [
     ]
   }, {
     path: '/',
-    component: () => import('@/view/store/Goods.vue')
+    component: () => import('@/view/site/Index.vue')
   }
 ]
 
