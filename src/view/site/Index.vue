@@ -21,7 +21,7 @@
         </div>
       </div>
     </div>
-    <div class="nav">
+    <div class="nav sticky top-0">
       <header class="float-header">
         <div class="container px-md md:px-xl">
           <div class="flex">
@@ -215,6 +215,9 @@
         </div>
       </header>
     </div>
+    <div>
+      sfasdfsfsfdsfsdfsdfsd
+    </div>
   </div>
 </template>
 <style scoped>
@@ -223,5 +226,9 @@
   height: 60px;
   text-transform: uppercase;
   z-index: 20;
+}
+.container {
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>
