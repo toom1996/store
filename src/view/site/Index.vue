@@ -21,7 +21,7 @@
         </div>
       </div>
     </div>
-    <div class="nav sticky top-0">
+    <div class="nav sticky top-0 z-50 bg-white">
       <header class="float-header">
         <div class="container px-md md:px-xl">
           <div class="flex">
@@ -165,27 +165,18 @@
                 </div>
               </div>
               <a
-                class="ml-md flex md:hidden items-center whitespace-nowrap"
-                data-nav-target="hooks"
-                data-dropdown="search"
-                >icon</a
-              ><a
-                href="https://hbx.com/cn/login"
-                class="ml-md hidden md:flex items-center"
-                ><span id="nav-login-text">icon</span></a
-              ><a
                 href="https://hbx.com/cn/faq"
                 class="ml-md hidden lg:flex items-center"
                 data-nav-target="hooks"
                 data-dropdown="help"
-                ><span id="nav-help-text">icon</span></a
+                ><QuestionMarkCircleIcon class="h-6 w-6" /></a
               ><a
                 href="https://hbx.com/cn/cart"
                 class="ml-md flex items-center whitespace-nowrap"
                 data-nav-target="hooks"
                 data-dropdown="cart"
-                ><span id="nav-bag-text">icosafsfsfsafsdfffffffffffffffffffffffffffffffffffffffffffn</span
-                ><!----></a
+                ><span id="nav-bag-text"
+                  ><UserCircleIcon class="h-6 w-6" /></span></a
               ><a
                 href="https://hbx.com/cn/settings"
                 class="ml-md hidden md:flex items-center"
@@ -215,11 +206,130 @@
         </div>
       </header>
     </div>
-    <div>
-      sfasdfsfsfdsfsdfsdfsd
+    <div class="container swiper-container px-0 pt-7">
+      <swiper
+        :slidesPerView="1"
+        :spaceBetween="30"
+        :loop="true"
+        :pagination="{
+          clickable: true,
+        }"
+        :modules="modules"
+        class="mySwiper"
+      >
+        <swiper-slide>
+          <div>
+            <img
+              src="https://aliyun-img.hypebeast.cn/https%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2Fhbx%2F202209%2F1663923733_20_Off_Selected_Regular-Priced_Items_Sale_SC_Banner_1-1600X900.jpg?q=85"
+              class="w-full"
+              alt="闪电促销：低至8折"
+              width="100"
+              height="900"
+            />
+            safsdfsfsf
+          </div> </swiper-slide
+        ><swiper-slide>Slide 2</swiper-slide><swiper-slide>Slide 3</swiper-slide
+        ><swiper-slide>Slide 4</swiper-slide><swiper-slide>Slide 5</swiper-slide
+        ><swiper-slide>Slide 6</swiper-slide><swiper-slide>Slide 7</swiper-slide
+        ><swiper-slide>Slide 8</swiper-slide
+        ><swiper-slide>Slide 9</swiper-slide>
+      </swiper>
     </div>
+    <footer
+      id="hbx-footer"
+      class="uppercase py-7 text-xs border-t border-black"
+      data-controller="footer"
+      data-action="load@window->footer#loadComponents"
+      data-v-app=""
+    >
+      <div class="container px-md md:px-xl">
+        <div
+          class="
+            main-section
+            grid grid-cols-1
+            gap-0
+            sm:gap-xl
+            lg:gap-xl
+            sm:grid-cols-2
+            lg:grid-cols-4
+            pt-xs
+            sm:pt-0
+          "
+        ></div>
+        <div class="flex justify-between flex-wrap sm:mt-lg leading-tight">
+          <ul
+            class="font-bold mb-md hidden md:flex flex-row space-x-lg"
+            itemtype="http://schema.org/SiteNavigationElement"
+          >
+            <li itemprop="name">
+              <a itemprop="url" href="https://hbx.com/cn/about">关于</a>
+            </li>
+            <li itemprop="name">
+              <a itemprop="url" href="https://hbx.com/cn/stores">零售店</a>
+            </li>
+            <li itemprop="name">
+              <a itemprop="url" href="https://hbx.com/cn/faq">帮助</a>
+            </li>
+            <li itemprop="name">
+              <a itemprop="url" href="https://hbx.com/cn/pro">HBX Pro</a>
+            </li>
+            <li itemprop="name">
+              <a itemprop="url" href="https://hbx.com/cn/referral"
+                >客户推荐计划</a
+              >
+            </li>
+            <li itemprop="name">
+              <a itemprop="url" href="https://hbx.com/cn/affiliates"
+                >联属营销计划</a
+              >
+            </li>
+          </ul>
+          <div class="copyright text-left lg:text-right">
+            <div class="flex flex-row flex-wrap md:justify-end">
+              <span class="pr-xs"
+                >2022
+                <a href="https://hypebeast.ltd/">Hypebeast Limited</a>
+                版权所有</span
+              ><a href="https://hbx.com/cn/terms" class="pr-xs">网站声明</a
+              ><a href="https://hbx.com/cn/privacy" class="pr-xs">隐私政策</a
+              ><a href="https://hbx.com/cn/gdpr">gdpr</a>
+            </div>
+            <span
+              >HBX® is a registered trademark of Hypebeast Hong Kong Ltd.</span
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
   </div>
 </template>
+<script lang="ts">
+import {
+  UserCircleIcon,
+  QuestionMarkCircleIcon,
+} from "@heroicons/vue/24/solid";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import { Pagination, Navigation } from "swiper";
+
+// Import Swiper styles
+import "swiper/css";
+
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+export default {
+  components: {
+    UserCircleIcon,
+    QuestionMarkCircleIcon,
+    Swiper,
+    SwiperSlide,
+  },
+  setup() {
+    return {
+      modules: [Pagination, Navigation],
+    };
+  },
+};
+</script>
 <style scoped>
 .float-header {
   border-bottom-width: 1px;
@@ -228,6 +338,42 @@
   z-index: 20;
 }
 .container {
+  margin-left: auto;
+  margin-right: auto;
+}
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper {
   margin-left: auto;
   margin-right: auto;
 }
