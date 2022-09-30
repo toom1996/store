@@ -1,44 +1,126 @@
 <template>
-    <div class="header-main">
-      <div class="top">
-        <div class="float-left flex">
-          <h1 class="float-left logo">LOGO</h1>
-          <input type="text" placeholder="搜索.." />
+  <div>
+    <div class="nav sticky top-0 z-50 bg-white">
+      <header class="float-header">
+        <div class="container px-md md:px-xl">
+          <div class="flex">
+            <nav class="
+                hidden
+                md:flex
+                w-2/5
+                md:w-auto md:flex-grow-0
+                items-center
+                text-base
+              ">
+              <div id="hamburger-menu" class="cursor-pointer flex items-center w-lg h-lg"
+                   data-action="click->nav#toggleMenu">
+                123
+              </div>
+            </nav>
+            <nav id="section-nav" class="
+                hidden
+                md:flex
+                flex-grow flex-nowrap
+                items-stretch
+                text-base
+              " itemtype="http://www.schema.org/SiteNavigationElement">
+              <a href="https://hbx.com/cn/men" id="nav-men" class="relative px-2.5 flex items-center"
+                 data-action="mouseover->nav#showTooltip mouseleave->nav#hideTooltip" itemprop="url"
+                 data-nav-target="hooks links" data-dropdown="men" data-level1-value="men"><span
+                  itemprop="name">男装</span></a><a href="https://hbx.com/cn/women" id="nav-women"
+                                                    class="relative px-2.5 flex items-center"
+                                                    data-action="mouseover->nav#showTooltip mouseleave->nav#hideTooltip"
+                                                    itemprop="url"
+                                                    data-nav-target="hooks links" data-dropdown="women"
+                                                    data-level1-value="women"><span
+                itemprop="name">女装</span></a><a href="https://hbx.com/cn/life" id="nav-life"
+                                                  class="relative px-2.5 flex items-center"
+                                                  data-action="mouseover->nav#showTooltip mouseleave->nav#hideTooltip"
+                                                  itemprop="url"
+                                                  data-nav-target="hooks links" data-dropdown="life"
+                                                  data-level1-value="life"><span
+                itemprop="name">生活</span></a><a href="https://hbx.com/cn/archives" id="nav-archives"
+                                                  class="relative px-2.5 flex items-center"
+                                                  data-action="mouseover->nav#showTooltip mouseleave->nav#hideTooltip"
+                                                  itemprop="url"
+                                                  data-nav-target="hooks links" data-dropdown="archives"
+                                                  data-level1-value="archives"><span
+                itemprop="name">中古逸品</span></a><a href="https://hbx.com/cn/drops" id="nav-drops"
+                                                      data-nav-target="links" itemprop="url"
+                                                      class="relative px-2.5 flex items-center"><span
+                itemprop="name">特别发售</span></a><a href="https://hbx.com/cn/sale" id="nav-sale"
+                                                      class="relative px-2.5 flex items-center"
+                                                      data-action="mouseover->nav#showTooltip mouseleave->nav#hideTooltip"
+                                                      itemprop="url"
+                                                      data-nav-target="hooks links" data-dropdown="sale"
+                                                      data-level1-value="sale"><span
+                itemprop="name">折扣商品</span></a><a href="#" class="relative px-2.5 flex items-center hidden"
+                                                      id="nav-more"
+                                                      data-action="mouseover->nav#showTooltip mouseleave->nav#hideTooltip"
+                                                      data-nav-target="hooks links" data-dropdown="more"
+                                                      data-level1-value="more"><span>更多</span></a>
+            </nav>
+            <nav id="section-user" class="
+                w-2/5
+                md:w-auto
+                flex flex-grow-0 flex-nowrap
+                justify-end
+                items-center
+              ">
+              <div class="ml-md hidden md:flex items-center whitespace-nowrap" style="flex-grow: 4">
+                <div class="
+                    search-suggestion
+                    leading-tight
+                    text-xs
+                    flex flex-col
+                    w-full
+                  " data-v-4e908c8f="">
+                  <!-- Form -->
+                  <form id="form-search" action="https://hbx.com/cn/men/search"
+                        class="flex items-center border pr-xs h-full" data-v-4e908c8f="">
+                    <input type="text" name="q" autocomplete="off" placeholder="搜索" class="border-0 h-full"
+                           style="flex-grow: 1"/>
+                    <!--v-if-->icon
+                  </form>
+                </div>
+              </div>
+              <a href="https://hbx.com/cn/faq" class="ml-md hidden lg:flex items-center" data-nav-target="hooks"
+                 data-dropdown="help">
+                <QuestionMarkCircleIcon class="h-6 w-6"/>
+              </a><a href="https://hbx.com/cn/cart" class="ml-md flex items-center whitespace-nowrap"
+                     data-nav-target="hooks" data-dropdown="cart"><span id="nav-bag-text">
+                  <UserCircleIcon class="h-6 w-6"/>
+                </span></a><a href="https://hbx.com/cn/settings" class="ml-md hidden md:flex items-center"><img
+                src="https://hbx.com/build/shop/images/flags/cn.1b2b4e5f.jpg" alt="CNY" class="mr-xs border" style="
+                    width: 21px;
+                    height: 12px;
+                    margin-top: 25px;
+                    margin-bottom: 24px;
+                  "/><span>CNY</span></a>
+              <div class="ml-md md:hidden flex items-center whitespace-nowrap">
+                <div id="hamburger-menu" class="cursor-pointer flex items-center w-lg h-lg"
+                     data-action="click->nav#toggleMenu">
+                  icon
+                </div>
+              </div>
+            </nav>
+          </div>
         </div>
-        <div class="float-right flex">
-          <p class="m-0">SIGNUP</p>
-          /
-          <p class="m-0">SIGNIN</p>
-        </div>
-      </div>
-      <div class="nav-middle">
-        <div class="nav-list flex space-between">
-          <!-- <div data-nav="home" v-for="(item, index) in header['top-nav']" :key="index"> -->
-            <a href="javascript:void(0);">m<span></span></a>
-          <!-- </div> -->
-        </div>
-      </div>
+      </header>
     </div>
-  </template>
-  <style scoped>
-  .header-main {
-    overflow: hidden;
-    background-color: gray;
-  }
-  .top {
-    height: 60px;
-    display: flex;
-    align-content: space-between;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .logo {
-    margin: 0;
-  }
-  
-  .nav-middle .nav-list {
-    background-color: #fff;
-    height: 60px;
-    padding: 0 56px;
-  }
-  </style>
+  </div>
+</template>
+<script>
+export default {
+  name: 'MainHeader',
+}
+</script>
+<style scoped>
+.float-header {
+  border-bottom-width: 1px;
+  height: 60px;
+  text-transform: uppercase;
+  z-index: 20;
+  border-color: #000;
+}
+</style>
