@@ -2,20 +2,20 @@ import {createRouter, createWebHistory, RouteRecordRaw} from "vue-router"
 
 const routes: RouteRecordRaw[] = [
     {
-        path: '/',
-        component: () => import('@/view/site/Index.vue')
-    },
-    {
-        path: '/styles',
+        path: '',
         component: () => import('@/layouts/MainLayout.vue'),
-        redirect: '/styles/all',
+        redirect: '/index',
         children: [
             {
-                path: 'all',
+                path: '/styles',
                 component: () => import('@/view/styles/Index.vue')
             }
         ]
-    }
+    },
+    {
+        path: '/index',
+        component: () => import('@/view/site/Index.vue')
+    },
 ]
 
 export const router = createRouter({
