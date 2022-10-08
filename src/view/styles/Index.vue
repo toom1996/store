@@ -87,15 +87,14 @@
                         </div>
                         <div class="mt-4 flex justify-between">
                           <div>
-                            <h3 class="text-sm text-gray-700">
+                            <h1 class="text-2xl text-gray-700">
                               <a :href="product.href">
                                 <span aria-hidden="true" class="absolute inset-0" />
                                 {{ product.name }}
                               </a>
-                            </h3>
+                            </h1>
                             <p class="mt-1 text-sm text-gray-500">{{ product.color }}</p>
                           </div>
-                          <p class="text-sm font-medium text-gray-900">{{ product.price }}</p>
                         </div>
                       </div>
                     </div>
@@ -106,6 +105,32 @@
           </section>
         </main>
       </div>
+    </div>
+    <div>
+      <nav class="isolate inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
+        <a href="#" class="relative inline-flex items-center rounded-l-md border border-gray-300 bg-white px-2 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20">
+          <span class="sr-only">Previous</span>
+          <!-- Heroicon name: mini/chevron-left -->
+          <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+          </svg>
+        </a>
+        <!-- Current: "z-10 bg-indigo-50 border-indigo-500 text-indigo-600", Default: "bg-white border-gray-300 text-gray-500 hover:bg-gray-50" -->
+        <a href="#" aria-current="page" class="relative z-10 inline-flex items-center border border-indigo-500 bg-indigo-50 px-4 py-2 text-sm font-medium text-indigo-600 focus:z-20">1</a>
+        <a href="#" class="relative inline-flex items-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20">2</a>
+        <a href="#" class="relative hidden items-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20 md:inline-flex">3</a>
+        <span class="relative inline-flex items-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700">...</span>
+        <a href="#" class="relative hidden items-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20 md:inline-flex">8</a>
+        <a href="#" class="relative inline-flex items-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20">9</a>
+        <a href="#" class="relative inline-flex items-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20">10</a>
+        <a href="#" class="relative inline-flex items-center rounded-r-md border border-gray-300 bg-white px-2 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20">
+          <span class="sr-only">Next</span>
+          <!-- Heroicon name: mini/chevron-right -->
+          <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </nav>
     </div>
   </div>
 </template>
@@ -123,13 +148,12 @@ import {
   TransitionChild,
   TransitionRoot,
 } from '@headlessui/vue'
-import { XMarkIcon } from '@heroicons/vue/24/outline'
-import { ChevronDownIcon, FunnelIcon, MinusIcon, PlusIcon, Squares2X2Icon } from '@heroicons/vue/20/solid'
+import { ChevronDownIcon, FunnelIcon, MinusIcon, PlusIcon, Squares2X2Icon, ClockIcon, EyeIcon } from '@heroicons/vue/20/solid'
 
 const products = [
   {
     id: 1,
-    name: 'Basic Tee',
+    name: '2022年数字设计趋势报告',
     href: '#',
     imageSrc: 'https://aliyun-img.hypebeast.cn/https%3A%2F%2Fhbx.hypebeast.com%2Ffiles%2F2022%2F04%2FED_16x9_01-1.jpg?q=85',
     imageAlt: "Front of men's Basic Tee in black.",
@@ -138,7 +162,7 @@ const products = [
   },
   {
     id: 1,
-    name: 'Basic Tee',
+    name: '2023春夏主题趋势方向: 元宇宙之元',
     href: '#',
     imageSrc: 'https://imgf1.pop-fashion.com/upload/flash_report/2022/2022091622/ANAREPORT_63248aa86adee_9660.jpg',
     imageAlt: "Front of men's Basic Tee in black.",
